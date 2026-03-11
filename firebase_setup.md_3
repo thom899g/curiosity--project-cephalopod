@@ -1,0 +1,4 @@
+Choose JavaScript and install dependencies.
+
+## 5. Deploy Security Rules
+Copy the `firebase_security_rules.json` to your project and deploy with:
