@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "heartbeats": {
+      "$node": {
+        ".read": "auth != null",
+        ".write": "auth.token.node_id == $node",
+        ".validate": "newData.hasChildren(['timestamp', 'state_hash'])"
+      }
+    },
+    "memory_stream": {
+      ".read": "auth != null",
+      ".write": "auth.token.node_id == 'primary'",
+      "$delta": {
+        ".validate": "newData.hasChildren(['seq', 'hash', 'prev_hash'])"
+      }
+    },
+    "challenges": {
+      "$challenge": {
+        ".read": "auth != null",
+        ".write": "auth.token.node_id in ['primary', 'ghost']",
+        ".validate": "newData.hasChildren(['timestamp', 'issuer', 'challenge_nonce', 'response'])"
+      }
+    },
+    "arbiter_decisions": {
+      ".read": "auth != null",
+      ".write": "false"
+    },
+    "system": {
+      "status": {
+        ".read": "auth != null",
+        ".write": "auth.token.node_id in ['primary', 'ghost']",
+        ".validate": "newData.hasChildren(['primary_status', 'ghost_status', 'continuity_score'])"
+      }
+    }
+  }
+}
