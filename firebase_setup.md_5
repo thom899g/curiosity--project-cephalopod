@@ -1,0 +1,26 @@
+## 7. Generate Service Account Key
+1. In the Firebase Console, go to Project settings > Service accounts.
+2. Click "Generate new private key" and download the JSON file.
+3. Securely store this key and note the path for the nodes to use.
+
+## 8. Environment Variables for Nodes
+Each node (Primary and Ghost) will need the following environment variables:
+
+- `FIREBASE_SERVICE_ACCOUNT_KEY_PATH`: Path to the service account key JSON file.
+- `FIREBASE_PROJECT_ID`: Your Firebase project ID.
+
+Alternatively, you can set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of the service account key.
+
+## 9. Initialize the Database Structure
+The system expects the following collections in Firestore:
+
+- `heartbeats`: For heartbeat messages from Primary and Ghost.
+- `memory_stream`: For memory deltas from Primary.
+- `challenges`: For challenges issued by the Ghost or Arbiter.
+- `arbiter_decisions`: For decisions made by the Arbiter (written by Cloud Functions).
+- `system`: For system status (like `/system/status`).
+
+You can create these collections by writing the first document, or they will be created automatically when the first write occurs.
+
+## 10. Testing
+Test the setup by running the Primary and Ghost Node in a controlled environment.
