@@ -1,0 +1,9 @@
+# Firebase Setup for Project Cephalopod
+
+## 1. Create Firebase Project
+1. Go to the [Firebase Console](https://console.firebase.google.com/).
+2. Click "Add project" and name it "cephalopod-arbiter".
+3. Follow the steps to create the project.
+
+## 2. Install Firebase CLI
+Run the following commands in your terminal:
