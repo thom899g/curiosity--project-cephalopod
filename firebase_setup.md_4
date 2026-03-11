@@ -1,0 +1,2 @@
+## 6. Deploy Cloud Functions
+Copy the `arbiter_cloud_function.js` to your functions folder and deploy with:
