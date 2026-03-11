@@ -1,0 +1,10 @@
+## 3. Initialize Firestore
+1. In the Firebase Console, under "Build", click "Firestore Database".
+2. Click "Create database" and start in production mode.
+3. Choose a location and then enable.
+
+## 4. Set Up Cloud Functions
+1. In the Firebase Console, under "Build", click "Functions".
+2. Click "Get started" and follow the steps (you may need to upgrade to the Blaze plan, which is pay-as-you-go, but note that there is a free tier).
+
+Alternatively, you can use the Firebase CLI to initialize Cloud Functions:
